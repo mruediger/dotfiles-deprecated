@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-DOTFILES=`curl https://api.github.com/repos/mruediger/dotfiles/contents |\
- sed -nr 's/.*"path": "([^"]*).*/\1/p' |\
- grep dotfiles$`
+DOTFILES=`curl https://api.github.com/repos/mruediger/dotfiles/contents/scripts |\
+ sed -nr 's/.*"path": "([^"]*).*/\1/p'`
 
 for DOTFILE in ${DOTFILES}; do
-    echo $DOTFILE
+    bash $DOTFILE
 done
