@@ -159,3 +159,5 @@ gsettings set "org.gnome.Terminal.Legacy.Keybindings:/" "toggle-menubar" "disabl
 gsettings set "org.gnome.Terminal.Legacy.Keybindings:/" "zoom-in" "disabled"
 gsettings set "org.gnome.Terminal.Legacy.Keybindings:/" "zoom-normal" "disabled"
 gsettings set "org.gnome.Terminal.Legacy.Keybindings:/" "zoom-out" "disabled"
+
+gsettings set org.gnome.desktop.sound event-sounds false
