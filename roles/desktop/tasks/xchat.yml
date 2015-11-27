@@ -1,0 +1,8 @@
+- name: install xchat
+  dnf: name=xchat state=latest
+  sudo: yes
+
+- name: copy config
+  template:
+    src=xchat-servlist.conf
+    dest={{ansible_user_dir}}/.config/xchat2/servlist_.conf

@@ -1,0 +1,4 @@
+- name: edit gitconfig
+  template:
+    src=gitconfig
+    dest={{ansible_user_dir}}/.gitconfig

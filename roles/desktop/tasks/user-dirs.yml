@@ -1,0 +1,10 @@
+- name: create directories
+  file: path={{ ansible_user_dir }}/{{ item }} state=directory mode=0755
+  with_items:
+    - downloads
+    - doc/templates
+    - public
+    - media/music
+    - media/pictures
+    - media/videos
+    - tmp
