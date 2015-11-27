@@ -1,5 +1,8 @@
 #!/bin/bash
 
+gsettings set "org.gnome.desktop.background" "picture-uri" "file:///$HOME/src/dotfiles/templates/wallpaper.jpg"
+gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///$HOME/src/dotfiles/templates/screensaver.jpg"
+
 gsettings set "org.gnome.desktop.wm.keybindings" "activate-window-menu" "@as []"
 gsettings set "org.gnome.desktop.wm.keybindings" "always-on-top" "@as []"
 gsettings set "org.gnome.desktop.wm.keybindings" "begin-move" "@as []"

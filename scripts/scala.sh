@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo dnf install scala scala-apidoc
+sudo dnf --assumeyes install scala scala-apidoc
