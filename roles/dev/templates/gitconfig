@@ -7,3 +7,10 @@
 	insteadOf = https://github.com/brainly
 [core]
 	editor = emacs -nw
+[alias]
+  ec = config --global -e
+  nb = checkout -b
+  wq = !git add -A && git commit -m 'WIP'
+  ca = commit -a
+  amend = commit -a --amend
+  lg = "log --graph --color --pretty=format:\"%C(#DD6F48)%h %C(#528B8B)%an:%C(reset) %s\""
