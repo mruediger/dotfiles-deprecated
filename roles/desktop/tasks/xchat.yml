@@ -3,6 +3,6 @@
   sudo: yes
 
 - name: copy config
-  template:
+  copy:
     src=xchat-servlist.conf
     dest={{ansible_user_dir}}/.config/xchat2/servlist_.conf
