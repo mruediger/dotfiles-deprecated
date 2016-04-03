@@ -88,8 +88,8 @@ gsettings set "org.gnome.desktop.wm.keybindings" "toggle-above" "['<Super>T']"
 gsettings set "org.gnome.settings-daemon.plugins.media-keys" "calculator" "'<Primary>F3'"
 gsettings set "org.gnome.settings-daemon.plugins.media-keys" "home" "'<Primary>F1'"
 
-gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-up" "['<Super>Up']"
-gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-down" "['<Super>Down']"
+gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-up" "['<Super>Up','Back']"
+gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-down" "['<Super>Down', 'Forward']"
 gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-down" "['<Primary><Super>Down']"
 gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-up" "['<Primary><Super>Up']"
 
