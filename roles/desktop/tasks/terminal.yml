@@ -1,10 +1,18 @@
 - name: setup dircolors
   template: src=dircolors dest={{ansible_user_dir}}/.dircolors
 
+- name: install terminal font
+  when: ansible_distribution == 'Archlinux'
+  package: name=community/ttf-liberation state=latest
+  sudo: yes
+
 - name: set terminal font
   gsettings: schema="org.gnome.desktop.interface" key="monospace-font-name" value="Liberation Mono 10"
 
+
+
 - name: set terminal keybindings
+  when: ansible_distribution == 'Fedora'
   gsettings: schema="org.gnome.Terminal.Legacy.Keybindings:/" key="{{ item.name }}" value="{{ item.as }}"
   with_items:
     - { name: switch-to-tab-3, as: 'disabled' }

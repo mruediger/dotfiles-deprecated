@@ -1,6 +1,7 @@
 - name: install emacs
-  dnf: name=emacs state=latest
+  package: name=emacs state=latest
   sudo: yes
+
 
 - name: git clone config
   git: repo=git@github.com:mruediger/emacsd.git dest={{ansible_user_dir}}/.emacs.d
