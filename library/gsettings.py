@@ -9,7 +9,7 @@ def get_value(params):
 
 def set_value(params):
     gsettings = Gio.Settings.new(params['schema'])
-    gsettings.set_value(params['key'], GLib.Variant.new_string(params['value']))
+    gsettings.set_value(params['key'], GLib.Variant.new_string(str(params['value'])))
 
 def main():
     module = AnsibleModule(
@@ -20,9 +20,8 @@ def main():
         },
         supports_check_mode=True)
 
-
     oldvalue = get_value(module.params)
-    newvalue = GLib.Variant.new_string(module.params['value'])
+    newvalue = GLib.Variant.new_string(str(module.params['value']))
     changed = oldvalue.compare(newvalue) != 0
 
     if changed and not module.check_mode:
