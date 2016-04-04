@@ -1,5 +1,7 @@
 #!/bin/bash
 
+WORKDIR=`git rev-parse --show-toplevel`
+
 mkdir -p $HOME/downloads
 mkdir -p $HOME/doc/templates
 mkdir -p $HOME/public
@@ -16,4 +18,4 @@ rmdir $HOME/Pictures
 rmdir $HOME/Public
 rmdir $HOME/Videos
 
-rsync $WORKDIR/templates/user-dirs.dirs $HOME/.config/user-dirs.dirs
+cp $WORKDIR/templates/user-dirs.dirs $HOME/.config/user-dirs.dirs
