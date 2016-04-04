@@ -1,3 +1,3 @@
 #!/bin/bash
 
-[[ -f /etc/arch-release ]] && sudo pacman -S vagrant virtualbox linux-headers
+[[ -f /etc/arch-release ]] && sudo pacman -S --noconfirm vagrant virtualbox linux-headers
