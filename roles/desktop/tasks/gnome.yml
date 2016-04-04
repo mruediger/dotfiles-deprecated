@@ -1,91 +1,91 @@
 - name: set gnome keybindings
-  gsettings: schema=org.gnome.desktop.wm.keybindings key={{ item.name }} value="{{ item.as }}"
+  gsettings: schema=org.gnome.desktop.wm.keybindings key={{ item.name }} value={{ item.as }}
   with_items:
-    - { name: cycle-windows-backward, as: "@as []" }
-    - { name: minimize, as: "@as []" }
-    - { name: move-to-workspace-7, as: "@as []" }
-    - { name: move-to-workspace-8, as: "@as []" }
-    - { name: move-to-workspace-9, as: "@as []" }
-    - { name: move-to-monitor-left, as: "@as []" }
-    - { name: move-to-workspace-5, as: "@as []" }
-    - { name: move-to-workspace-6, as: "@as []" }
-    - { name: move-to-workspace-10, as: "@as []" }
-    - { name: move-to-workspace-11, as: "@as []" }
-    - { name: move-to-workspace-12, as: "@as []" }
-    - { name: move-to-center, as: "@as []" }
-    - { name: unmaximize, as: "@as []" }
-    - { name: panel-main-menu, as: "@as []" }
-    - { name: cycle-windows, as: "@as []" }
-    - { name: cycle-panels-backward, as: "@as []" }
-    - { name: panel-run-dialog, as: "['<Alt>F2']" }
-    - { name: switch-to-workspace-down, as: "['<Super>Down']" }
-    - { name: move-to-corner-ne, as: "@as []" }
-    - { name: move-to-side-e, as: "@as []" }
-    - { name: move-to-workspace-right, as: "@as []" }
+    - { name: activate-window-menu, as: "@as []" }
     - { name: always-on-top, as: "@as []" }
-    - { name: move-to-workspace-up, as: "['<Primary><Super>Up']" }
-    - { name: raise, as: "@as []" }
-    - { name: maximize, as: "@as []" }
+    - { name: begin-move, as: "@as []" }
+    - { name: begin-resize, as: "@as []" }
+    - { name: close, as: "['<Alt>F4']" }
+    - { name: cycle-group, as: "@as []" }
     - { name: cycle-group-backward, as: "@as []" }
+    - { name: cycle-panels, as: "@as []" }
+    - { name: cycle-panels-backward, as: "@as []" }
+    - { name: cycle-windows, as: "@as []" }
+    - { name: cycle-windows-backward, as: "@as []" }
+    - { name: lower, as: "@as []" }
+    - { name: maximize, as: "@as []" }
+    - { name: maximize-horizontally, as: "@as []" }
+    - { name: maximize-vertically, as: "@as []" }
+    - { name: minimize, as: "@as []" }
+    - { name: move-to-center, as: "@as []" }
+    - { name: move-to-corner-ne, as: "@as []" }
+    - { name: move-to-corner-nw, as: "@as []" }
+    - { name: move-to-corner-se, as: "@as []" }
+    - { name: move-to-corner-sw, as: "@as []" }
+    - { name: move-to-monitor-down, as: "@as []" }
+    - { name: move-to-monitor-left, as: "@as []" }
+    - { name: move-to-monitor-right, as: "@as []" }
+    - { name: move-to-monitor-up, as: "@as []" }
+    - { name: move-to-side-e, as: "@as []" }
     - { name: move-to-side-n, as: "@as []" }
     - { name: move-to-side-s, as: "@as []" }
-    - { name: maximize-horizontally, as: "@as []" }
     - { name: move-to-side-w, as: "@as []" }
-    - { name: move-to-corner-nw, as: "@as []" }
-    - { name: switch-windows, as: "@as []" }
-    - { name: begin-move, as: "@as []" }
-    - { name: move-to-monitor-down, as: "@as []" }
-    - { name: switch-windows-backward, as: "@as []" }
-    - { name: move-to-workspace-left, as: "@as []" }
-    - { name: move-to-corner-se, as: "@as []" }
-    - { name: activate-window-menu, as: "@as []" }
-    - { name: switch-input-source, as: "['<Super>space']" }
-    - { name: toggle-above, as: "['<Super>T']" }
-    - { name: move-to-monitor-right, as: "@as []" }
-    - { name: switch-input-source-backward, as: "['<Shift><Super>space']" }
-    - { name: move-to-workspace-last, as: "@as []" }
-    - { name: lower, as: "@as []" }
-    - { name: cycle-panels, as: "@as []" }
-    - { name: toggle-fullscreen, as: "@as []" }
-    - { name: toggle-on-all-workspaces, as: "@as []" }
-    - { name: move-to-monitor-up, as: "@as []" }
-    - { name: move-to-corner-sw, as: "@as []" }
-    - { name: toggle-shaded, as: "@as []" }
-    - { name: switch-to-workspace-1, as: "@as []" }
-    - { name: switch-to-workspace-2, as: "@as []" }
-    - { name: switch-to-workspace-3, as: "@as []" }
-    - { name: switch-to-workspace-4, as: "@as []" }
-    - { name: raise-or-lower, as: "@as []" }
-    - { name: switch-panels, as: "['<Control><Alt>Tab']" }
-    - { name: switch-panels-backward, as: "['<Shift><Control><Alt>Tab']" }
-    - { name: switch-applications-backward, as: "['<Shift><Super>Tab', '<Shift><Alt>Tab']" }
-    - { name: maximize-vertically, as: "@as []" }
-    - { name: switch-to-workspace-7, as: "@as []" }
-    - { name: switch-to-workspace-5, as: "@as []" }
-    - { name: show-desktop, as: "@as []" }
-    - { name: switch-to-workspace-8, as: "@as []" }
-    - { name: switch-to-workspace-9, as: "@as []" }
-    - { name: switch-to-workspace-6, as: "@as []" }
-    - { name: switch-applications, as: "['<Super>Tab', '<Alt>Tab']" }
-    - { name: switch-to-workspace-10, as: "@as []" }
-    - { name: switch-to-workspace-11, as: "@as []" }
-    - { name: switch-to-workspace-12, as: "@as []" }
-    - { name: switch-to-workspace-left, as: "@as []" }
-    - { name: toggle-maximized, as: "['<Alt>F3']" }
-    - { name: set-spew-mark, as: "@as []" }
-    - { name: begin-resize, as: "@as []" }
-    - { name: move-to-workspace-down, as: "['<Primary><Super>Down']" }
-    - { name: switch-to-workspace-last, as: "@as []" }
-    - { name: switch-group-backward, as: "['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']" }
-    - { name: switch-group, as: "['<Super>Above_Tab', '<Alt>Above_Tab']" }
-    - { name: cycle-group, as: "@as []" }
-    - { name: close, as: "['<Alt>F4']" }
-    - { name: switch-to-workspace-up, as: "['<Super>Up']" }
     - { name: move-to-workspace-1, as: "@as []" }
     - { name: move-to-workspace-2, as: "@as []" }
     - { name: move-to-workspace-3, as: "@as []" }
     - { name: move-to-workspace-4, as: "@as []" }
+    - { name: move-to-workspace-5, as: "@as []" }
+    - { name: move-to-workspace-6, as: "@as []" }
+    - { name: move-to-workspace-7, as: "@as []" }
+    - { name: move-to-workspace-8, as: "@as []" }
+    - { name: move-to-workspace-9, as: "@as []" }
+    - { name: move-to-workspace-10, as: "@as []" }
+    - { name: move-to-workspace-11, as: "@as []" }
+    - { name: move-to-workspace-12, as: "@as []" }
+    - { name: move-to-workspace-down, as: "['<Primary><Super>Down']" }
+    - { name: move-to-workspace-last, as: "@as []" }
+    - { name: move-to-workspace-left, as: "@as []" }
+    - { name: move-to-workspace-right, as: "@as []" }
+    - { name: move-to-workspace-up, as: "['<Primary><Super>Up']" }
+    - { name: panel-main-menu, as: "@as []" }
+    - { name: panel-run-dialog, as: "['<Alt>F2']" }
+    - { name: raise, as: "@as []" }
+    - { name: raise-or-lower, as: "@as []" }
+    - { name: set-spew-mark, as: "@as []" }
+    - { name: show-desktop, as: "@as []" }
+    - { name: switch-applications, as: "['<Super>Tab', '<Alt>Tab']" }
+    - { name: switch-applications-backward, as: "['<Shift><Super>Tab', '<Shift><Alt>Tab']" }
+    - { name: switch-group, as: "['<Super>Above_Tab', '<Alt>Above_Tab']" }
+    - { name: switch-group-backward, as: "['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']" }
+    - { name: switch-input-source, as: "['<Super>space']" }
+    - { name: switch-input-source-backward, as: "['<Shift><Super>space']" }
+    - { name: switch-panels, as: "['<Control><Alt>Tab']" }
+    - { name: switch-panels-backward, as: "['<Shift><Control><Alt>Tab']" }
+    - { name: switch-to-workspace-1, as: "@as []" }
+    - { name: switch-to-workspace-10, as: "@as []" }
+    - { name: switch-to-workspace-11, as: "@as []" }
+    - { name: switch-to-workspace-12, as: "@as []" }
+    - { name: switch-to-workspace-2, as: "@as []" }
+    - { name: switch-to-workspace-3, as: "@as []" }
+    - { name: switch-to-workspace-4, as: "@as []" }
+    - { name: switch-to-workspace-5, as: "@as []" }
+    - { name: switch-to-workspace-6, as: "@as []" }
+    - { name: switch-to-workspace-7, as: "@as []" }
+    - { name: switch-to-workspace-8, as: "@as []" }
+    - { name: switch-to-workspace-9, as: "@as []" }
+    - { name: switch-to-workspace-down, as: "['<Super>Down']" }
+    - { name: switch-to-workspace-last, as: "@as []" }
+    - { name: switch-to-workspace-left, as: "@as []" }
     - { name: switch-to-workspace-right, as: "@as []" }
+    - { name: switch-to-workspace-up, as: "['<Super>Up']" }
+    - { name: switch-windows, as: "@as []" }
+    - { name: switch-windows-backward, as: "@as []" }
+    - { name: toggle-above, as: "['<Super>T']" }
+    - { name: toggle-fullscreen, as: "@as []" }
+    - { name: toggle-maximized, as: "['<Alt>F3']" }
+    - { name: toggle-on-all-workspaces, as: "@as []" }
+    - { name: toggle-shaded, as: "@as []" }
+    - { name: unmaximize, as: "@as []" }
 
 - name: set gnome media-keys
   gsettings: schema=org.gnome.settings-daemon.plugins.media-keys key={{ item.name }} value="{{ item.as }}"
