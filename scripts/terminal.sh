@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# check https://github.com/FilipBB/base16-builder/
+
 #DIRCOLORS
 WORKDIR=`git rev-parse --show-toplevel`
 cp $WORKDIR/templates/dircolors $HOME/.dircolors

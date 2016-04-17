@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+WORKDIR=$(dirname $(realpath $0))
+export WORKDIR
+
+on_arch() {
+  [ -f /etc/arch-release ]
+}
+
+on_fedora() {
+  [ -f /etc/fedora-release ]
+}
+
+sudo_install() {
+  on_arch && sudo pacman -S --noconfirm --needed $*
+  on_fedora && sudo dnf install --assumeyes $*
+}
+
+if [[ -n $1 ]] ; then
+  source $1
+else
+  for script in `ls $WORKDIR/scripts/*`; do
+    echo
+    echo running $script
+    echo
+    source $script
+  done
+fi

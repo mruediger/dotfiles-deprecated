@@ -1,7 +1,15 @@
 #!/usr/bin/bash
 
-sudo dnf --assumeyes install xchat
+WORKDIR=`git rev-parse --show-toplevel`
 
-mkdir -p $HOME/.config/xchat2/servlist_.conf
+if [[ -f /etc/fedora-release ]]; then
+    sudo dnf --assumeyes install xchat
+    mkdir -p $HOME/.config/xchat2
+    rsync $WORKDIR/templates/servlist_.conf $HOME/.config/xchat2/servlist_.conf
+fi
 
-rsync $WORKDIR/templates/servlist_.conf $HOME/.config/xchat2/servlist_.conf
+if [[ -f /etc/arch-release ]]; then
+    sudo pacman -S --noconfirm extra/xchat
+    mkdir -p $HOME/.xchat2
+    rsync $WORKDIR/templates/servlist_.conf $HOME/.xchat2/servlist_.conf
+fi
