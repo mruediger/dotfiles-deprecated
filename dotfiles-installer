@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-DOTFILES=`curl https://api.github.com/repos/mruediger/dotfiles/contents/scripts |\
- sed -nr 's/.*"path": "([^"]*).*/\1/p'`
-
-for DOTFILE in ${DOTFILES}; do
-    bash $DOTFILE
-done
