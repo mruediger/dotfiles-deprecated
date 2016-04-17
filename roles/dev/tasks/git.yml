@@ -1,8 +1,0 @@
-- name: edit gitconfig
-  template:
-    src=gitconfig
-    dest={{ansible_user_dir}}/.gitconfig
-- name: add git templatedir
-  copy:
-    src=git-templates
-    dest=~/.git-templates

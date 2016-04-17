@@ -1,7 +1,0 @@
-- include: bash.yml
-- include: emacs.yml
-- include: gnome.yml
-- include: rpmfusion.yml
-- include: terminal.yml
-- include: user-dirs.yml
-- include: xchat.yml

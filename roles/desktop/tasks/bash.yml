@@ -1,5 +1,0 @@
-- name: copy bashrc
-  template: src=bashrc dest={{ansible_user_dir}}/.bashrc
-
-- name: copy bash_alias
-  template: src=bash_alias  dest={{ansible_user_dir}}/.bash_alias

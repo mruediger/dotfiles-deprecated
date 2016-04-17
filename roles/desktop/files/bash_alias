@@ -1,8 +1,0 @@
-alias ls='ls --color=tty'
-alias en='emacs -nw'
-alias grep='grep --binary-files=without-match --directories=skip'
-alias gos='go-search'
-
-alias gst='git status'
-alias gca='git commit -a'
-alias gcam='git commit -am'
