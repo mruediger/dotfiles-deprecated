@@ -99,3 +99,9 @@ gsettings set "org.gnome.desktop.wm.preferences" "resize-with-right-button" "tru
 gsettings set "org.gnome.desktop.wm.preferences" "mouse-button-modifier" "'<Alt>'"
 
 gsettings set org.gnome.desktop.sound event-sounds false
+
+
+#themes
+git clone ~/.themes/Flat-Plat https://github.com/nana-4/Flat-Plat.git
+gsettings set org.gnome.desktop.interface gtk-theme 'Flat-Plat'
+gsettings set org.gnome.shell.extensions.user-theme name 'Flat-Plat'
