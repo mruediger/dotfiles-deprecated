@@ -102,6 +102,7 @@ gsettings set org.gnome.desktop.sound event-sounds false
 
 
 #themes
-git clone ~/.themes/Flat-Plat https://github.com/nana-4/Flat-Plat.git
+mkdir -p $HOME/.themes
+git clone https://github.com/nana-4/Flat-Plat.git $HOME/.themes/Flat-Plat 
 gsettings set org.gnome.desktop.interface gtk-theme 'Flat-Plat'
 gsettings set org.gnome.shell.extensions.user-theme name 'Flat-Plat'
