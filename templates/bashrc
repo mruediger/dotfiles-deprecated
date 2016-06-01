@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
 fi
 
 if [ -f ~/.bash_d3media ]; then
@@ -11,6 +11,10 @@ fi
 
 if [ -f ~/.bash_alias ]; then
   . ~/.bash_alias
+fi
+
+if [ -f /etc/profile.d/vte.sh ] ; then
+  . /etc/profile.d/vte.sh
 fi
 
 HISTSIZE=2000
