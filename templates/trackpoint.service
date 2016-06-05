@@ -1,0 +1,10 @@
+[Unit]
+Description=Activate udev rule 10-thinkpad.rules
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/udevadm trigger --subsystem-match=serio
+ExecStartPost=/usr/bin/udevadm info -a -p /sys/devices/platform/i8042/serio1/serio2/
+
+[Install]
+WantedBy=multi-user.target
