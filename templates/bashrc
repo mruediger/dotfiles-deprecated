@@ -17,6 +17,12 @@ if [ -f /etc/profile.d/vte.sh ] ; then
   . /etc/profile.d/vte.sh
 fi
 
+if [ -d ~/install/google-cloud-sdk ] ; then
+  source '~/install/google-cloud-sdk/path.bash.inc'
+  source '~/install/google-cloud-sdk/completion.bash.inc'
+fi
+
+
 HISTSIZE=2000
 
 # PROMPT
@@ -33,11 +39,15 @@ ${orange}>${normal} "
 eval `dircolors ~/.dircolors`
 
 export JAVA_HOME="/etc/alternatives/java_sdk_openjdk/"
+
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
+
 export GOPATH=$HOME/src/go
 export PATH=$PATH:$GOPATH/bin
 export GOROOT=$HOME/install/go
 export PATH=$PATH:$GOROOT/bin
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH=$PATH:$HOME/install/rust/bin
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=$PATH:$HOME/install/google-cloud-sdk/bin/
