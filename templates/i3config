@@ -1,0 +1,221 @@
+# Mathias
+#
+
+#
+# Variables
+#
+
+set $mod Mod4
+set $alt Mod1
+set $ctl Control
+
+set $container_move exec --no-startup-id ~/.config/i3/switch.py
+
+#
+# font and colors
+#
+font pango:DejaVu Sans Mono 12
+
+set $black       #212121
+set $darkblack   #000000
+set $red         #fb4934
+set $darkred     #cc241d
+set $green       #b8bb26
+set $darkgreen   #98971a
+set $yellow      #fabd2f
+set $darkyellow  #d79921
+set $blue        #83a598
+set $darkblue    #458588
+set $magenta     #d3869b
+set $darkmagenta #b16286
+set $cyan        #8ec07c
+set $darkcyan    #689d6a
+set $white       #ebdbb2
+set $darkwhite   #a89984
+set $background  #000000
+set $transparent #1d202100
+
+#                       BORDER      BACKGROUND  TEXT   INDICATOR   CHILD_BORDER
+client.focused          $darkwhite  $darkwhite  $black $darkwhite  $darkwhite
+client.unfocused        $black      $black      $white $black      $black
+client.focused_inactive $black      $black      $white $black      $black
+client.urgent           $darkred    $darkred    $black $darkred    $darkred
+client.background       $black
+
+#
+# COMMANDS
+#
+bindsym $mod+l exec --no-startup-id i3lock -c 000000
+bindsym $mod+Return exec gnome-terminal
+bindsym $ctl+F2 exec gnome-terminal
+bindsym $mod+a exec dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 2 toggle
+
+
+#
+# MOUSE
+#
+
+focus_follows_mouse yes
+mouse_warping none
+
+#
+# focus
+#
+bindsym $alt+Tab focus right
+bindsym $mod+Tab focus right
+bindsym $mod+p focus parent
+
+bindsym $mod+$ctl+Left move left
+bindsym $mod+$ctl+Right move right
+bindsym $mod+$ctl+Up move up
+bindsym $mod+$ctl+Down move down
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $alt
+
+# kill focused window
+bindsym $alt+F4 kill
+
+
+#
+# workspace setup
+#
+
+workspace_auto_back_and_forth no
+
+bindsym $mod+z workspace back_and_forth
+bindsym $mod+Shift+z move container to workspace back_and_forth
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+#
+# containers movement
+#
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+Left $container_move left
+bindsym $mod+Shift+Right $container_move right
+
+bindsym $mod+Up move container to output up
+bindsym $mod+Down move container to output down
+
+bindsym $mod+Shift+Up move workspace to output up
+bindsym $mod+Shift+Down move workspace to output down
+
+
+
+
+#
+# layout
+#
+
+bindsym $mod+$ctl+h split horizontal
+bindsym $mod+$ctl+v split vertical
+bindsym $mod+$ctl+space split toggle
+
+bindsym $mod+space layout toggle split
+bindsym $mod+h layout splith
+bindsym $mod+v layout splitv
+
+bindsym $mod+t layout toggle
+bindsym $mod+Shift+f floating toggle
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+C restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+L exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+c mode "resize"
+
+mode "focus" {
+     bindsym $mod+s [class="Slack"] focus; mode "default"
+     bindsym $mod+m [class="Spotify"] focus; mode "default"
+
+     bindsym $mod+space [urgent=latest] focus; mode "default"
+
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
+bindsym $mod+m mode "focus"
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    output eDP-1
+
+    tray_output none
+
+    separator_symbol "  "
+
+    workspace_buttons yes
+
+    status_command i3status
+    position top
+    strip_workspace_numbers yes
+    font pango:DejaVu Sans Mono 12
+
+
+
+    colors {
+        statusline         $white
+        background         $black
+        separator          $yellow
+
+        #                  BORDER       BACKGROUND   TEXT
+        focused_workspace  $transparent $transparent $yellow
+        inactive_workspace $transparent $transparent $white
+        active_workspace   $transparent $transparent $white
+        urgent_workspace   $darkred     $darkred     $transparent
+        binding_mode       $transparent $transparent $yellow
+    }
+}
+
+# startup
+exec_always --no-startup-id feh --bg-fill src/dotfiles/templates/wallpaper.jpg
