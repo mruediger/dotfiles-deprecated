@@ -1,21 +1,19 @@
 # .bashrc
+function load_if_exists {
+    if [ -f $1 ]; then
+        . $1
+    fi
+}
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
+load_if_exists /etc/profile.d/vte.sh
+load_if_exists /etc/profile.d/less.sh
+load_if_exists /etc/profile.d/bash_completion.sh
 
-if [ -f ~/.bash_d3media ]; then
-  . ~/.bash_d3media
-fi
+load_if_exists ~/.bash_d3media
+load_if_exists ~/.bash_fromatob
 
-if [ -f ~/.bash_alias ]; then
-  . ~/.bash_alias
-fi
-
-if [ -f /etc/profile.d/vte.sh ] ; then
-  . /etc/profile.d/vte.sh
-fi
+load_if_exists ~/.bash.d/git-alias.bash
+load_if_exists ~/.bash.d/grep-alias.bash
 
 if [ -d ~/install/google-cloud-sdk ] ; then
   source '~/install/google-cloud-sdk/path.bash.inc'
