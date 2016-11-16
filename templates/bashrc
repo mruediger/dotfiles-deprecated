@@ -30,7 +30,7 @@ load_if_exists /etc/profile.d/less.sh
 load_if_exists /etc/profile.d/bash_completion.sh
 
 load_if_exists ~/.bash_d3media
-load_if_exists ~/.bash_fromatob
+load_if_exists ~/.bash.d/fromatob.bash
 
 load_if_exists ~/.bash.d/git.bash
 load_if_exists ~/.bash.d/grep-alias.bash
