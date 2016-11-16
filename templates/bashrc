@@ -1,26 +1,4 @@
 # .bashrc
-function load_if_exists {
-    if [ -f $1 ]; then
-        . $1
-    fi
-}
-
-load_if_exists /etc/profile.d/vte.sh
-load_if_exists /etc/profile.d/less.sh
-load_if_exists /etc/profile.d/bash_completion.sh
-
-load_if_exists ~/.bash_d3media
-load_if_exists ~/.bash_fromatob
-
-load_if_exists ~/.bash.d/git-alias.bash
-load_if_exists ~/.bash.d/grep-alias.bash
-
-if [ -d ~/install/google-cloud-sdk ] ; then
-  source '~/install/google-cloud-sdk/path.bash.inc'
-  source '~/install/google-cloud-sdk/completion.bash.inc'
-fi
-
-
 HISTSIZE=2000
 
 # PROMPT
@@ -36,16 +14,30 @@ ${orange}>${normal} "
 
 eval `dircolors ~/.dircolors`
 
-export JAVA_HOME="/etc/alternatives/java_sdk_openjdk/"
+function load_if_exists {
+    if [ -f $1 ]; then
+        . $1
+    fi
+}
+
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
 
-export GOPATH=$HOME/src/go
-export PATH=$PATH:$GOPATH/bin
-export GOROOT=$HOME/install/go
-export PATH=$PATH:$GOROOT/bin
 
-export PATH="$HOME/.cargo/bin:$PATH"
+load_if_exists /etc/profile.d/vte.sh
+load_if_exists /etc/profile.d/less.sh
+load_if_exists /etc/profile.d/bash_completion.sh
 
-export PATH=$PATH:$HOME/install/google-cloud-sdk/bin/
+load_if_exists ~/.bash_d3media
+load_if_exists ~/.bash_fromatob
+
+load_if_exists ~/.bash.d/git.bash
+load_if_exists ~/.bash.d/grep-alias.bash
+load_if_exists ~/.bash.d/f-function.bash
+
+load_if_exists ~/.bash.d/gcloud.bash
+
+load_if_exists ~/.bash.d/go.bash
+load_if_exists ~/.bash.d/java.bash
+load_if_exists ~/.bash.d/rust.bash
