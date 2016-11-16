@@ -4,7 +4,7 @@ After=suspend.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/hdparm -B 10 /dev/sda
+ExecStart=/usr/sbin/hdparm -B 10 /dev/sda
 
 [Install]
 WantedBy=suspend.target
