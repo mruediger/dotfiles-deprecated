@@ -13,6 +13,6 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gst='git status'
 
 alias gco='git checkout'
-alias gcb='git copy-branch-name'
+alias gcob='git checkout -b'
 alias gb='git branch'
 alias gac='git add -A && git commit -m'
