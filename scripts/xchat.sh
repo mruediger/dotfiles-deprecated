@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-WORKDIR=`git rev-parse --show-toplevel`
-
 if [[ -f /etc/fedora-release ]]; then
     sudo dnf --assumeyes install xchat
     mkdir -p $HOME/.config/xchat2

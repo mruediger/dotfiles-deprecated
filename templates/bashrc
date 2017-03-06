@@ -1,5 +1,4 @@
 # .bashrc
-HISTSIZE=2000
 
 # PROMPT
 normal="\[\e[0m\]"
@@ -29,12 +28,15 @@ load_if_exists /etc/profile.d/vte.sh
 load_if_exists /etc/profile.d/less.sh
 load_if_exists /etc/profile.d/bash_completion.sh
 
-load_if_exists ~/.bash_d3media
+load_if_exists ~/.bash.d/history.bash
+load_if_exists ~/.bash.d/general.bash
+
 load_if_exists ~/.bash.d/fromatob.bash
 
 load_if_exists ~/.bash.d/git.bash
 load_if_exists ~/.bash.d/grep-alias.bash
 load_if_exists ~/.bash.d/f-function.bash
+
 
 load_if_exists ~/.bash.d/gcloud.bash
 
