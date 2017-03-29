@@ -1,1 +1,1 @@
-export JAVA_HOME="/etc/alternatives/java_sdk_openjdk/"
+export JAVA_HOME="/usr/lib/jvm"
