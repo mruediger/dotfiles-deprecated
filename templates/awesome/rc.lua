@@ -17,7 +17,7 @@ local cyclefocus = require("cyclefocus")
 local switcher = require("switcher")
 
 local battery_widget = require("battery-widget")
-
+local pulseaudio = require("pulseaudio")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -228,6 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             battery,
+            volumewidget,
             mytextclock,
             s.mylayoutbox,
         },
@@ -301,8 +302,10 @@ globalkeys = awful.util.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey, }, "l", function() awful.spawn("i3lock -c 000000") end, {description = "lock screen", group = "awesome"}),
+    awful.key({}, "XF86AudioRaiseVolume",  pulseaudio.VolumeUp),
+    awful.key({ }, "XF86AudioLowerVolume",  pulseaudio.VolumeDown),
+    awful.key({ }, "XF86AudioMute",         pulseaudio.ToggleMute),
     
-
 --    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
 --              {description = "increase master width factor", group = "layout"}),
 --    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
