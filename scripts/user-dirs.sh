@@ -17,3 +17,4 @@ rmdir --ignore-fail-on-non-empty $HOME/Public
 rmdir --ignore-fail-on-non-empty $HOME/Videos
 
 cp $WORKDIR/templates/user-dirs.dirs $HOME/.config/user-dirs.dirs
+
