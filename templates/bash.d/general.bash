@@ -55,3 +55,6 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
 HISTTIMEFORMAT='%F %T '
+
+
+set bell-style none
