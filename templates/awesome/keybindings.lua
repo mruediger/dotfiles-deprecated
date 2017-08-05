@@ -4,6 +4,7 @@ local winkey = "Mod4"
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 local pulseaudio = require("pulseaudio")
+local brightness = require("brightness")
 
 local keybindings = {}
 
@@ -12,18 +13,22 @@ keybindings.globalkeys = awful.util.table.join(
               {description="show help", group="awesome"}),
     awful.key({ winkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
+    awful.key({                   }, "XF86Back", awful.tag.viewprev,
+              {description = "view previous", group = "tag"}),
     awful.key({ winkey,           }, "Right",  awful.tag.viewnext,
+              {description = "view next", group = "tag"}),
+    awful.key({                   }, "XF86Forward", awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ winkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ winkey,           }, "j",
+    awful.key({ altkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ winkey,           }, "k",
+    awful.key({ altkey, "Shift"   }, "Tab",
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -52,21 +57,20 @@ keybindings.globalkeys = awful.util.table.join(
         end,
         {description = "go back", group = "client"}),
 
-    awful.key({ "Mod1",           }, "Tab",
-       function ()
-          switcher.switch( 1, "Alt_L", "Tab", "ISO_Left_Tab")
-    end),
-
     -- Standard program
     awful.key({ winkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ winkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ winkey, "Shift"   }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
-    awful.key({ winkey, }, "l", function() awful.spawn("i3lock -c 000000") end, {description = "lock screen", group = "awesome"}),
+    awful.key({ winkey, }, "l", function() awful.spawn("i3lock -i /home/bag/src/dotfiles/templates/w95lock.png") end, {description = "lock screen", group = "awesome"}),
     awful.key({}, "XF86AudioRaiseVolume",  pulseaudio.VolumeUp),
     awful.key({ }, "XF86AudioLowerVolume",  pulseaudio.VolumeDown),
     awful.key({ }, "XF86AudioMute",         pulseaudio.ToggleMute),
+
+    awful.key({ }, "XF86MonBrightnessUp", brightness.up),
+    awful.key({ }, "XF86MonBrightnessDown", brightness.down),
+
     
 --    awful.key({ winkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
 --              {description = "increase master width factor", group = "layout"}),
