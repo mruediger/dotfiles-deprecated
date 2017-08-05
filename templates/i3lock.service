@@ -6,7 +6,8 @@ Before=sleep.target
 User=bag
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -c 000000
+ExecStart=/usr/bin/i3lock -i /home/bag/src/dotfiles/templates/w95lock.png
 
 [Install]
 WantedBy=sleep.target
+WantedBy=suspend.target 
