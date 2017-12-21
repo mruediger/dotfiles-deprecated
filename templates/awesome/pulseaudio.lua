@@ -5,15 +5,15 @@ local pulseaudio = {}
 
 
 function pulseaudio:VolumeUp()
-   awful.spawn('pactl set-sink-volume 0 +5%', false)
+   awful.spawn('pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%', false)
 end
 
 function pulseaudio:VolumeDown()
-   awful.spawn('pactl set-sink-volume 0 -5%', false)
+   awful.spawn('pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%', false)
 end
 
 function pulseaudio:ToggleMute()
-   awful.spawn('pactl set-sink-mute 0 toggle', false)
+   awful.spawn('pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle', false)
 end
 
 
