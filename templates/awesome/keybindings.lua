@@ -21,7 +21,6 @@ keybindings.globalkeys = awful.util.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ winkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
-
     awful.key({ altkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
@@ -63,13 +62,21 @@ keybindings.globalkeys = awful.util.table.join(
     awful.key({ winkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ winkey, "Shift"   }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
-    awful.key({ winkey, }, "l", function() awful.spawn("i3lock -c 000000") end, {description = "lock screen", group = "awesome"}),
-    awful.key({}, "XF86AudioRaiseVolume",  pulseaudio.VolumeUp),
+    awful.key({ winkey, }, "l",
+       function()
+	  awful.spawn("/usr/bin/i3lock -i /home/bag/src/dotfiles/templates/w95lock.png")
+       end, {description = "lock screen", group = "awesome"}),
+    awful.key({ }, "XF86AudioRaiseVolume",  pulseaudio.VolumeUp),
     awful.key({ }, "XF86AudioLowerVolume",  pulseaudio.VolumeDown),
     awful.key({ }, "XF86AudioMute",         pulseaudio.ToggleMute),
 
     awful.key({ }, "XF86MonBrightnessUp", brightness.up),
     awful.key({ }, "XF86MonBrightnessDown", brightness.down),
+    awful.key({                   }, "XF86ScreenSaver",
+       function()
+	  awful.spawn("/usr/bin/xset dpms force off")
+       end,
+       {description = "blank screen", group = "awesome"}),
 
     
 --    awful.key({ winkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
