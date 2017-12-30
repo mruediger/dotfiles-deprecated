@@ -69,7 +69,7 @@ keybindings.globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioRaiseVolume",  pulseaudio.VolumeUp),
     awful.key({ }, "XF86AudioLowerVolume",  pulseaudio.VolumeDown),
     awful.key({ }, "XF86AudioMute",         pulseaudio.ToggleMute),
-
+    awful.key({ }, "XF86AudioMicMute",      pulseaudio.ToggleMicMute),
     awful.key({ }, "XF86MonBrightnessUp", brightness.up),
     awful.key({ }, "XF86MonBrightnessDown", brightness.down),
     awful.key({                   }, "XF86ScreenSaver",
