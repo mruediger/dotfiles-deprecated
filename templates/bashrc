@@ -43,3 +43,4 @@ load_if_exists ~/.bash.d/gcloud.bash
 load_if_exists ~/.bash.d/go.bash
 load_if_exists ~/.bash.d/java.bash
 load_if_exists ~/.bash.d/rust.bash
+load_if_exists ~/.bash.d/android.bash
