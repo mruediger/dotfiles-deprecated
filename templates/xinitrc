@@ -1,0 +1,3 @@
+xrdb ~/.Xresources
+xset -b
+exec awesome

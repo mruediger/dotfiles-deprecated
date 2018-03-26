@@ -1,0 +1,1 @@
+/home/bag/src/dotfiles/templates/bash.d
