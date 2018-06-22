@@ -1,3 +1,7 @@
 [submodule "templates/awesome/battery-widget"]
 	path = templates/awesome/battery-widget
 	url = https://github.com/deficient/battery-widget.git
+[submodule "templates/awesome/volume-control"]
+	path = templates/awesome/volume-control
+	url = https://github.com/deficient/volume-control
+	branch = master
