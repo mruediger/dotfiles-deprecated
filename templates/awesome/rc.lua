@@ -124,7 +124,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
-battery = battery_widget({adapter = "BAT0", widget_text = "${AC_BAT}${color_on}${percent}%${color_off} ${time_est}"})
+battery = battery_widget({widget_text = "${AC_BAT}${color_on}${percent}%${color_off} ${time_est}"})
 
 -- {{{ Wibar
 -- Create a textclock widget
